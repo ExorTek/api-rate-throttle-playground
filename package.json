@@ -3,21 +3,17 @@
   "version": "1.0.0",
   "description": "API rate limit and throttle playground",
   "scripts": {
-    "dev:express-rate-limit": "nodemon express-rate-limiting.js",
-    "dev:express-throttle": "nodemon express-throttling.js",
-    "dev:express-redis": "nodemon express-rate-limiting-redis.js",
-    "dev:fastify-rate-limit": "nodemon fastify-rate-limiting.js",
-    "dev:fastify-throttle": "nodemon fastify-throttling.js",
-    "dev:all": "concurrently \"yarn dev:express-rate-limit\" \"yarn dev:express-throttle\" \"yarn dev:fastify-rate-limit\" \"yarn dev:fastify-throttle\"",
+    "dev:express": "concurrently \"nodemon express-rate-limiting.js\" \"nodemon express-rate-limiting-redis.js\" \"nodemon express-throttling.js\"",
+    "dev:fastify": "concurrently \"nodemon fastify-rate-limiting.js\" \"nodemon fastify-rate-limiting-redis.js\" \"nodemon fastify-throttling.js\"",
     "format": "prettier --write ."
   },
   "packageManager": "yarn@4.5.0",
   "dependencies": {
     "@fastify/rate-limit": "^10.1.1",
-    "@fastify/throttle": "^3.0.0",
     "express": "^4.21.1",
     "express-rate-limit": "^7.4.1",
     "fastify": "^5.1.0",
+    "ioredis": "^5.4.1",
     "rate-limit-redis": "^4.2.0",
     "redis": "^4.7.0"
   },
