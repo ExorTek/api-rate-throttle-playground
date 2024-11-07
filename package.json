@@ -5,6 +5,7 @@
   "scripts": {
     "dev:express-rate-limit": "nodemon express-rate-limiting.js",
     "dev:express-throttle": "nodemon express-throttling.js",
+    "dev:express-redis": "nodemon express-rate-limiting-redis.js",
     "dev:fastify-rate-limit": "nodemon fastify-rate-limiting.js",
     "dev:fastify-throttle": "nodemon fastify-throttling.js",
     "dev:all": "concurrently \"yarn dev:express-rate-limit\" \"yarn dev:express-throttle\" \"yarn dev:fastify-rate-limit\" \"yarn dev:fastify-throttle\"",
@@ -16,7 +17,9 @@
     "@fastify/throttle": "^3.0.0",
     "express": "^4.21.1",
     "express-rate-limit": "^7.4.1",
-    "fastify": "^5.1.0"
+    "fastify": "^5.1.0",
+    "rate-limit-redis": "^4.2.0",
+    "redis": "^4.7.0"
   },
   "devDependencies": {
     "concurrently": "^9.1.0",
