@@ -6,7 +6,7 @@ const { createClient } = require('redis');
 const app = express();
 
 const CONFIG = {
-  PORT: 5005,
+  PORT: 5002,
   HOST: '127.0.0.1',
   REDIS_HOST: 'REDIS_HOST',
   REDIS_PASSWORD: 'REDIS_PASSWORD',
