@@ -2,7 +2,7 @@ const fastify = require('fastify')({ logger: true });
 const fastifyRateLimit = require('@fastify/rate-limit');
 
 const CONFIG = {
-  PORT: 5003,
+  PORT: 5004,
   HOST: '127.0.0.1',
 };
 
@@ -10,6 +10,12 @@ const startServer = async () => {
   await fastify.register(fastifyRateLimit, {
     max: 5,
     timeWindow: 60 * 1000,
+    errorResponseBuilder: (req, context) => {
+      return {
+        success: false,
+        message: 'Too many requests, please try again later in 1 minute',
+      };
+    },
   });
 
   fastify.get('/', (request, reply) => {
